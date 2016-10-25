@@ -12,6 +12,12 @@ namespace m14_trabalho_modelo {
     public partial class Form1 : Form {
         public Form1() {
             InitializeComponent();
+            
+        }
+
+        private void leitoresToolStripMenuItem_Click(object sender, EventArgs e) {
+            fr_leitores f = new fr_leitores();
+            f.Show();
         }
     }
 }
