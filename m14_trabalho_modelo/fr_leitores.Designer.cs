@@ -34,6 +34,8 @@
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnEscolher = new System.Windows.Forms.Button();
             this.lblCaminho = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbFotografia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLeitores)).BeginInit();
             this.SuspendLayout();
@@ -93,16 +95,21 @@
             this.ptbFotografia.Location = new System.Drawing.Point(138, 94);
             this.ptbFotografia.Name = "ptbFotografia";
             this.ptbFotografia.Size = new System.Drawing.Size(199, 139);
+            this.ptbFotografia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbFotografia.TabIndex = 3;
             this.ptbFotografia.TabStop = false;
             // 
             // dgvLeitores
             // 
+            this.dgvLeitores.AllowUserToAddRows = false;
+            this.dgvLeitores.AllowUserToDeleteRows = false;
             this.dgvLeitores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLeitores.Location = new System.Drawing.Point(367, 40);
             this.dgvLeitores.Name = "dgvLeitores";
+            this.dgvLeitores.ReadOnly = true;
             this.dgvLeitores.Size = new System.Drawing.Size(150, 192);
             this.dgvLeitores.TabIndex = 4;
+            this.dgvLeitores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLeitores_CellClick);
             // 
             // btnAdicionar
             // 
@@ -132,11 +139,33 @@
             this.lblCaminho.Size = new System.Drawing.Size(0, 13);
             this.lblCaminho.TabIndex = 7;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(367, 236);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 24);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Atualizar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(367, 262);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(150, 24);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Remover";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // fr_leitores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(529, 292);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblCaminho);
             this.Controls.Add(this.btnEscolher);
             this.Controls.Add(this.btnAdicionar);
@@ -148,6 +177,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "fr_leitores";
             this.Text = "fr_leitores";
             ((System.ComponentModel.ISupportInitialize)(this.ptbFotografia)).EndInit();
@@ -170,5 +201,7 @@
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button btnEscolher;
         private System.Windows.Forms.Label lblCaminho;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -19,5 +19,10 @@ namespace m14_trabalho_modelo {
             fr_leitores f = new fr_leitores();
             f.Show();
         }
+
+        private void livrosToolStripMenuItem_Click(object sender, EventArgs e) {
+            fr_livros f = new fr_livros();
+            f.Show();
+        }
     }
 }
