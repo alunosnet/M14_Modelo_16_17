@@ -96,6 +96,7 @@
             // 
             // cbLeitor
             // 
+            this.cbLeitor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLeitor.FormattingEnabled = true;
             this.cbLeitor.Location = new System.Drawing.Point(166, 34);
             this.cbLeitor.Name = "cbLeitor";
@@ -104,6 +105,7 @@
             // 
             // cbLivro
             // 
+            this.cbLivro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLivro.FormattingEnabled = true;
             this.cbLivro.Location = new System.Drawing.Point(168, 65);
             this.cbLivro.Name = "cbLivro";

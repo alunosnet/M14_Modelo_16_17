@@ -24,5 +24,10 @@ namespace m14_trabalho_modelo {
             fr_livros f = new fr_livros();
             f.Show();
         }
+
+        private void empréstimosToolStripMenuItem_Click(object sender, EventArgs e) {
+            fr_emprestimo f = new fr_emprestimo();
+            f.Show();
+        }
     }
 }

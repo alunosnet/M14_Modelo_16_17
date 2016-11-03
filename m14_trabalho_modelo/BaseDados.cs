@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;     //ler o ficheiro app.config
 using System.Data;
+using System.Windows.Forms;
 
 namespace m14_trabalho_modelo {
     class BaseDados {
@@ -130,12 +131,13 @@ namespace m14_trabalho_modelo {
                 comando.Parameters.AddWithValue("@estado", true);
                 comando.ExecuteNonQuery();
                 //alterar o estado do livro
-                strSQL = @"UPDATE Livros SET estado=false WHERE nlivro=" + nlivro;
+                strSQL = @"UPDATE Livros SET estado=0 WHERE nlivro=" + nlivro;
                 comando = new SqlCommand(strSQL, ligacaoBD);
                 comando.Transaction = transacao;
                 comando.ExecuteNonQuery();
             }
             catch(Exception erro) {
+                MessageBox.Show(erro.Message);
                 transacao.Rollback();
                 return;
             }

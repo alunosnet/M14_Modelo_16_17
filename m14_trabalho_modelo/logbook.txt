@@ -1,0 +1,3 @@
+﻿- Paginação
+- Imagem opcional no update
+- criar a base de dados na aplicação

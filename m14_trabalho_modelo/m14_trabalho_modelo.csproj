@@ -48,13 +48,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDados.cs" />
+    <Compile Include="Elementos.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="fr_emprestimo.cs" />
+    <Compile Include="fr_emprestimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="fr_emprestimo.Designer.cs">
       <DependentUpon>fr_emprestimo.cs</DependentUpon>
     </Compile>
@@ -109,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cria_bd_biblioteca_sql_server.sql" />
+    <Content Include="logbook.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
