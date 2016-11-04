@@ -33,6 +33,7 @@
             this.empréstimosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estatísticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.devoluçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +69,8 @@
             this.leitoresToolStripMenuItem,
             this.livrosToolStripMenuItem,
             this.toolStripSeparator1,
-            this.empréstimosToolStripMenuItem});
+            this.empréstimosToolStripMenuItem,
+            this.devoluçãoToolStripMenuItem});
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
             this.editarToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.editarToolStripMenuItem.Text = "Editar";
@@ -110,8 +112,16 @@
             // estatísticasToolStripMenuItem
             // 
             this.estatísticasToolStripMenuItem.Name = "estatísticasToolStripMenuItem";
-            this.estatísticasToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.estatísticasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.estatísticasToolStripMenuItem.Text = "Estatísticas";
+            this.estatísticasToolStripMenuItem.Click += new System.EventHandler(this.estatísticasToolStripMenuItem_Click);
+            // 
+            // devoluçãoToolStripMenuItem
+            // 
+            this.devoluçãoToolStripMenuItem.Name = "devoluçãoToolStripMenuItem";
+            this.devoluçãoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.devoluçãoToolStripMenuItem.Text = "Devolução";
+            this.devoluçãoToolStripMenuItem.Click += new System.EventHandler(this.devoluçãoToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -141,6 +151,7 @@
         private System.Windows.Forms.ToolStripMenuItem empréstimosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estatísticasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem devoluçãoToolStripMenuItem;
     }
 }
 

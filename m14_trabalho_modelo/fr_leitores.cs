@@ -76,12 +76,17 @@ namespace m14_trabalho_modelo {
             int nlinha = dgvLeitores.CurrentCell.RowIndex;
             //id do leitor 
             int nleitor = int.Parse(dgvLeitores.Rows[nlinha].Cells[0].Value.ToString());
-
-            //ler imagem para o vetor
-            byte[] imagem = Utils.ImagemParaVetor(lblCaminho.Text);
             string nome = txtNome.Text;
             DateTime data = dtpData.Value;
-            BaseDados.Instance.atualizarLeitor(nome, data, imagem,nleitor);
+            if (lblCaminho.Text != String.Empty) {
+                //ler imagem para o vetor
+                byte[] imagem = Utils.ImagemParaVetor(lblCaminho.Text);
+
+                BaseDados.Instance.atualizarLeitor(nleitor, nome, data, imagem);
+            }else {
+
+                BaseDados.Instance.atualizarLeitor(nleitor, nome, data);
+            }
             //limpar form
             txtNome.Text = "";
             ptbFotografia.Image = null;

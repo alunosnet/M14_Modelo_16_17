@@ -55,6 +55,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="fr_consultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fr_consultas.Designer.cs">
+      <DependentUpon>fr_consultas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fr_devolve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fr_devolve.Designer.cs">
+      <DependentUpon>fr_devolve.cs</DependentUpon>
+    </Compile>
     <Compile Include="fr_emprestimo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +90,12 @@
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fr_consultas.resx">
+      <DependentUpon>fr_consultas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fr_devolve.resx">
+      <DependentUpon>fr_devolve.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fr_emprestimo.resx">
       <DependentUpon>fr_emprestimo.cs</DependentUpon>

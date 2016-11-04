@@ -146,6 +146,7 @@
             this.ptbCapa.Location = new System.Drawing.Point(99, 203);
             this.ptbCapa.Name = "ptbCapa";
             this.ptbCapa.Size = new System.Drawing.Size(249, 106);
+            this.ptbCapa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbCapa.TabIndex = 4;
             this.ptbCapa.TabStop = false;
             // 
@@ -197,11 +198,13 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(459, 253);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(67, 21);
             this.comboBox1.TabIndex = 10;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label8
             // 

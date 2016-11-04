@@ -10,10 +10,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace m14_trabalho_modelo {
+
     public partial class fr_livros : Form {
+        const int registosPorPagina = 5;
         public fr_livros() {
             InitializeComponent();
             atualizarGrelha();
+            atualizaNrPaginas();
+        }
+        private void atualizaNrPaginas() {
+            comboBox1.Items.Clear();
+            int nRegistos = BaseDados.Instance.getNrLivros();
+            int nPaginas = (int)Math.Ceiling(nRegistos / (float)registosPorPagina);
+            for (int i = 1; i <= nPaginas; i++)
+                comboBox1.Items.Add(i);
         }
         //ADICIONAR
         private void button1_Click(object sender, EventArgs e) {
@@ -39,6 +49,7 @@ namespace m14_trabalho_modelo {
             BaseDados.Instance.adicionarLivro(nome, ano, data, preco, nomeImagem);
             //atualizar a grelha
             atualizarGrelha();
+            atualizaNrPaginas();
             //limpar form
             txtAno.Text = "";
             txtNome.Text = "";
@@ -48,7 +59,14 @@ namespace m14_trabalho_modelo {
         }
 
         private void atualizarGrelha() {
-            dgvLivros.DataSource = BaseDados.Instance.listarLivros();
+            if(comboBox1.SelectedIndex==-1)
+                dgvLivros.DataSource = BaseDados.Instance.listarLivros();
+            else {
+                int pagina = comboBox1.SelectedIndex + 1;
+                if (pagina <= 0) pagina = 1;
+                int primeiroRegisto = (pagina - 1) * registosPorPagina+1;
+                dgvLivros.DataSource = BaseDados.Instance.listarLivros(primeiroRegisto,registosPorPagina);
+            }
         }
 
         //escolher
@@ -78,5 +96,10 @@ namespace m14_trabalho_modelo {
             if (File.Exists(dados.Rows[0][5].ToString()))
                 ptbCapa.Image = Image.FromFile(dados.Rows[0][5].ToString());
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
+            atualizarGrelha();
+        }
+
     }
 }

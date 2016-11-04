@@ -27,3 +27,9 @@ CREATE TABLE [dbo].[Emprestimos]
 	foreign key (nlivro) references Livros(nlivro),
 	foreign key (nleitor) references Leitores(nleitor)
 )
+/*como testar se uma tabela existe antes de tentar criar*/
+if not exists (select * from sysobjects where name='nome' and xtype='U')
+    create table nome (
+        campo varchar(64) not null
+    )
+go
