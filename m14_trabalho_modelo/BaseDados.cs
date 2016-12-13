@@ -150,9 +150,17 @@ namespace m14_trabalho_modelo {
         }
         public DataTable listarLivros(string text) {
             string strSQL = @"SELECT nlivro AS id,nome AS Nome
-                            From Livros
-                            WHERE nome LIKE '%" + text + "%' ORDER By Nome";
-            return devolveConsulta(strSQL);
+                            From Livros WHERE nome like @texto ORDER BY NOME";
+            //WHERE nome LIKE '%" + text + "%' ORDER By Nome";
+            //return devolveConsulta(strSQL);
+            SqlCommand comando = new SqlCommand(strSQL, ligacaoBD);
+            comando.Parameters.AddWithValue("@texto", "%"+text+"%");
+            DataTable registos = new DataTable();
+
+            SqlDataReader leitor = comando.ExecuteReader();
+            registos.Load(leitor);
+
+            return registos;
         }
         public DataTable listarLivros(int pagina, int nregistos) {
             string strSQL = @"select nlivro as id,nome AS Nome from 
